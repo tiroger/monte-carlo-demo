@@ -2,7 +2,7 @@
 """
 Here we'll use Monte Carlo simulations to evaluate various roulette strategies. 
 All bets are placed on even-money sections (e.g (Red/Black, Odd/Even, 1-18/19-36, etc),
- which pay out 1/1.
+which pay out 1/1.
 """
 
 #importing libraries
