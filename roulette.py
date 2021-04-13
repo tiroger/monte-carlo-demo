@@ -66,7 +66,7 @@ the bet after every loss.
 def martingale():
     bankroll_over_time = []
     bankroll = 100  # Starting money reserve
-    bet = 0.01  # Initial bet
+    bet = 1  # Initial bet
     while bankroll > 0:
         roll = spin_wheel()
         if bet > bankroll:
@@ -74,7 +74,7 @@ def martingale():
         #outcomes.append(roll)
         if roll == 'red':
             bankroll += bet
-            bet = 0.01
+            bet = 1
         else:
             bankroll -= bet
             bet *= 2
@@ -97,7 +97,7 @@ current bet plus an extra amount equal to the original bet.
 def grand_martingale():
     bankroll_over_time = []
     bankroll = 100  # Starting money reserve
-    bet = 0.01  # Initial bet
+    bet = 1  # Initial bet
     while bankroll > 0:
         roll = spin_wheel()
         if bet > bankroll:
@@ -105,10 +105,10 @@ def grand_martingale():
         #outcomes.append(roll)
         if roll == 'red':
             bankroll += bet
-            bet = 0.01
+            bet = 1
         else:
             bankroll -= bet
-            bet *= 2 + bet
+            bet = 2*bet + bet
 
         bankroll_over_time.append(bankroll)
 
@@ -127,7 +127,7 @@ when they lose a hand, it is increased after a win.
 def reverse_martingale():
     bankroll_over_time = []
     bankroll = 100  # Starting money reserve
-    bet = 0.01  # Initial bet
+    bet = 1  # Initial bet
     while bankroll > 0:
         roll = spin_wheel()
         if bet > bankroll:
@@ -138,13 +138,12 @@ def reverse_martingale():
             bet *= 2
         else:
             bankroll -= bet
-            bet = 0.01
+            bet = 1
 
         bankroll_over_time.append(bankroll)
 
+    return bankroll_over_time
 
-
-reverse_martingale = reverse_martingale()
 
 """
 Strategy 5: The D’Alembert
@@ -211,14 +210,14 @@ def all_in():
 def monte_carlo(simulations):
     plt.style.use('fivethirtyeight')
     for sim in range(1, simulations + 1):
-        plt.plot(all_in(), linewidth=0.5)
+        plt.plot(martingale(), linewidth=0.5)
         plt.xlabel("Number of Games Played", fontsize=12)
         plt.ylabel("Bankroll ($)", fontsize=12)
         plt.xticks(fontsize=10)
         plt.yticks(fontsize=10)
-        plt.title('All In Strategy - Bankroll Over Time', fontsize=16)
+        plt.title('Martingale Strategy - Bankroll Over Time', fontsize=16)
         plt.tight_layout()
-        plt.savefig('images/roulette_all_in.png', dpi=300)
+        plt.savefig('images/roulette_martingale.png', dpi=300)
 
 ###################################################
 
