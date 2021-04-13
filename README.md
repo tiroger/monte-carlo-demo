@@ -1,3 +1,3 @@
-# monte-carlo-demo
+# Monte Carlo Method
 
 Monte Carlo simulations
