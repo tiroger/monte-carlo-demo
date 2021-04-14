@@ -44,8 +44,7 @@ all_pis = []
 def estimate_pi(simulations):
     # Simulating dart throws on a board with radius = 1
     hits = 0  # Counter for the number of "darts that fall inside the circle"
-    inside_outside = [
-    ]  # Array to contain all the dart outcomes; used for plotting
+    inside_outside = []  # Array to contain all the dart outcomes; used for plotting
 
     all_x = []
     all_y = []
@@ -56,9 +55,7 @@ def estimate_pi(simulations):
         y = np.random.uniform(-1, 1)
         all_y.append(y)
 
-        d = np.sqrt(
-            x**2 + y**2
-        )  # We can use Pythagoras' formula to calculate the distance of the dot from the center of the circle
+        d = np.sqrt(x**2 + y**2)  # We can use Pythagoras' formula to calculate the distance of the dot from the center of the circle
         if (d) < 1:
             hits += 1
             inside_outside.append(1)
@@ -80,7 +77,7 @@ def estimate_pi(simulations):
 
     ax1 = fig.add_subplot(211)
     ax1.set_title('Monte Carlo Simulation to Estimate Value of Pi',
-                  fontsize=16)
+                  fontsize=14)
     ax1 = sns.scatterplot(all_x, all_y, hue=hit_or_miss, legend=False)
 
     ax2 = fig.add_subplot(212)
