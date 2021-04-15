@@ -10,7 +10,6 @@ P(head) = number of heads/total number of coins flips
 # Importing libraries
 import random
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 
 # Simulating a coin toss
@@ -24,21 +23,20 @@ def flip_coin():
 
 probability_values = []
 
-
 def simulate_coin_flip(simulations):
     results = 0
     for sim in range(1, simulations):
         coin_flip = flip_coin()
         if coin_flip == "heads":
             results += 1
-        else:
-            results += 0
 
         temp_probability = results / sim
         probability_values.append(temp_probability)
 
     final_probability = results / simulations
 
+
+    
     plt.style.use('fivethirtyeight')
     plt.title('Monte Carlo Simulations of Coin Flips', fontsize=16)
     plt.axhline(0.5, color='g')
