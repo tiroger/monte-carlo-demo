@@ -10,5 +10,5 @@ This repo is a collection of examples that illustrate how the Monte Carlo simula
 
 1. Demonstration that the probability of getting a head in a coin toss experiment is 0.5
 2. Estimation of the value of Pi
-3. Demonstration that the best strategy in the Monty Python game is to switch doors
+3. Demonstration that the best strategy in the Monty Hall Problem is to switch doors
 4. Exploration of various strategies for playing Roulette at a casino

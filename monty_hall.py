@@ -77,7 +77,7 @@ def monty_hall(simulations):
 
     # Plotting the results
     plt.style.use('fivethirtyeight')
-    plt.title('Monte Carlo Simulations of Monty Python Strategy',
+    plt.title('Monte Carlo Simulations of Monty Hall Strategy',
               fontsize=16)
     plt.axhline(0.333, color='g')
     plt.axhline(0.666, color='purple')
@@ -98,7 +98,7 @@ def monty_hall(simulations):
         verticalalignment='top',
         fontsize=10)
     plt.tight_layout()
-    plt.savefig('images/monty_python_monte_carlo.png', dpi=300)
+    plt.savefig('images/monty_hall_monte_carlo.png', dpi=300)
 
 
 monty_hall(1000)
